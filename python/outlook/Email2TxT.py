@@ -4,7 +4,8 @@ import win32com.client
 from pathlib import Path # 4 folders
 import os # 4 finding folders
 import re # to remove unicode
-##########################
+
+########################## Pre-Loop #########################
 
 #shortcut to connecting to outlook
 Dispatch = win32com.client.Dispatch("Outlook.Application")
@@ -17,13 +18,16 @@ inbox = outlook.GetDefaultFolder(6)
 #pull incomeing mail
 incoming = inbox.Items
 #make folders
-EmailsDir = Path.cwd() / "python"/ "Emails" # setting path
+EmailsDir = Path.cwd() / "python"/ "outlook" / "Emails" # setting path
 EmailsDir.mkdir(parents=True, exist_ok=True) # settings to allow overwrite and to be in a file
 
 RawEmailsDir = EmailsDir / "RawEmails" # setting path
 RawEmailsDir.mkdir(parents=True, exist_ok=True) # settings to allow overwrite and to be in a file
+ResultDir = ''
 
-###########################
+ResultDir = Path.cwd() / "python"/ "outlook" / "Emails" / "RESULTS"
+ResultDir.mkdir(parents=True, exist_ok=True)
+########################### Loop ################################
 
 for incomin in incoming:  #looping until no more incoming mail
     # setting mail parts to respective name
