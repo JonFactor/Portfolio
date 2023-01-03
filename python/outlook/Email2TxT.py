@@ -40,10 +40,12 @@ for incomin in incoming:  #looping until no more incoming mail
     for character in str(RawSender):
         if character.isalnum():
             Sender += character
+    Sender = Sender[:20]
     subject = ""
     for character in str(Rawsubject):
         if character.isalnum():
             subject += character
+    subject = subject[:20]
     body = ""
     for character in str(Rawbody):
         if character.isalnum():
