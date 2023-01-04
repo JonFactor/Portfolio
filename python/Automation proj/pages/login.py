@@ -32,7 +32,8 @@ try:
     #### icon ####
     window.iconbitmap('python\Automation proj\images\Screenshot 2023-01-04 111710.ico')
     #### Body #####
-    message = Label(window, text="Login Here")
+    #title
+    message = Label(window, text="Login Here", font=("Helvetica", 36))
     message.pack(ipadx=10, ipady=10)
     
 
