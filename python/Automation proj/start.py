@@ -1,1 +1,1 @@
-from pages import login
+from UI import SingUp

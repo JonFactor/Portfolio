@@ -1,14 +1,26 @@
 import tkinter as tk
 from ctypes import windll
 from tkinter.ttk import Label
+from tkinter.ttk import Button
 ##### imports ######
+### functions ###
+def sub():
+    identification=idVar.get()
+    password = passVar.get()
+    print(identification, password)
+    idVar.set('')
+    passVar.set('')
+    import login
+def see():
+    pass ########################################
+
 try:
     #### Starting #####
     window = tk.Tk()
     #### fix blurr ####
     windll.shcore.SetProcessDpiAwareness(1)
     #### title ####
-    window.title('Login')
+    window.title('SingUp')
     #### window size ####
     windowW = 600
     windowH = 900
@@ -35,7 +47,23 @@ try:
     #title
     message = Label(window, text="Login Here", font=("Helvetica", 36))
     message.pack(ipadx=10, ipady=10)
-    
+    # ID
+    idVar = tk.StringVar()
+    idLBL = Label(window, text='ID ',font=('Helvetica', 12))
+    idLBL.pack()
+    idin = tk.Entry(window, textvariable= idVar,font=('calibre',10,'normal'))
+    idin.pack()
+    # Pass
+    passVar = tk.StringVar()
+    passLBL = Label(window, text='Password ',font=('Helvetica', 12))
+    passLBL.pack()
+    passin = tk.Entry(window, textvariable= passVar,font=('calibre',10,'normal'), show = '*')
+    passin.pack()
+    showBTN= Button(window,text='VIEW',command=see)
+    showBTN.pack()
+    # submit btn
+    subBtn=tk.Button(window,text='SUBMIT', command=sub)
+    subBtn.pack()
 
 finally:
     window.mainloop()
