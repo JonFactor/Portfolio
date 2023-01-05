@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from datetime import datetime
 import json
+
 passed = False
 while passed == False:
     query = input('Enter the book youd like to search: ')
@@ -25,3 +26,4 @@ resultsDir = Path.cwd() / 'python'/'schoolWork'/'apis'/'books' / f'result_{time}
 resultsDir.mkdir(parents=True, exist_ok=True)
 
 Path(resultsDir / "RESULTS.txt").write_text(str(results))
+
