@@ -16,7 +16,7 @@ while passed == False:
         passed = True
 
 results = responce.json()
-print(results)
+print(responce.json())
 results = results['items']
 results = results[4]
 ### make files ###
