@@ -1,6 +1,6 @@
 import tkinter as tk
 from ctypes import windll
-from tkinter.ttk import Label
+from tkinter.ttk import Label, Entry, Button
 ##### imports ######
 try:
     #### Starting #####
@@ -33,8 +33,16 @@ try:
     window.iconbitmap('python\Automation proj\images\Screenshot 2023-01-04 111710.ico')
     #### Body #####
     #title
-    message = Label(window, text="Login Here", font=("Helvetica", 36))
-    message.pack(ipadx=10, ipady=10)
+    lblmessage = Label(window, text="Login Here", font=("Helvetica", 36))
+    lblmessage.pack(ipadx=10, ipady=10)
+    #ID
+    varID = ''
+    lblID = Label(window, text='ID:', font=("Helvetica", 18))
+    lblID.pack(ipadx=10, ipady=10)
+    entID = Entry(window, textvariable=varID, font=("Helvetica", 18))
+    entID.pack()
+    #Submit
+    btnSub = Button(window, text='Submit', )
     
 
 finally:
