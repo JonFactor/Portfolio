@@ -5,7 +5,6 @@ import requests
 from pathlib import Path
 from datetime import datetime
 import time
-from PIL import Image
 import urllib.request
 ### imports ###
 
