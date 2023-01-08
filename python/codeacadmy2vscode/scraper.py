@@ -13,13 +13,14 @@ PATH = "C:\Program Files (x86)\chromedriver.exe"# Home
 #PATH = 'C:\\Users\Factor_Jon\Desktop\chromedriver.exe' #Skool
 driver = webdriver.Chrome(PATH)
 ### get
-grab = ''
+link = ''
 with open('python\codeacadmy2vscode\local.txt', 'r') as loc:
-    grab = loc.read()
+    link = loc.read()
+print(link)
 ############## running #################
 try:
-    driver.get(grab)
-    time.sleep(1)
+    driver.get(link)
+    time.sleep(10)
 finally:
     print('done')
     driver.quit()

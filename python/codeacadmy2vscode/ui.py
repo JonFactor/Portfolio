@@ -12,12 +12,12 @@ Path = ''
 def submit():
     with open('python\codeacadmy2vscode\local.txt', 'w') as loc:
         link = entLink.get()
-        Path = entPath.get()
         loc.writelines(link)
         loc.writelines('-----')
         loc.writelines(Path)
-        if Path == '' or link == '':
-            wave.open('C:\\Users\jonfa\Documents\GitHub\Portfolio\python\codeacadmy2vscode\omg.mp3','r')
+        if  link == '':
+            print('oops')
+            #wave.open('C:\\Users\jonfa\Documents\GitHub\Portfolio\python\codeacadmy2vscode\omg.mp3','r')
         else:
             menu.destroy()
 ### ui
@@ -31,26 +31,23 @@ try:
     lbltitle = Label()
     lblLink = Label()
     entLink = Entry()
-    lblPath = Label()
-    entPath = Entry()
+
     btnSubmit = Button()
     #configs
     lbltitle.configure(text='Code2VS',font=('Arial', 32), bg = backround)
     lblLink.configure(text='Link:',font=('Arial', 26), bg = backround)
     entLink.configure(textvariable=link,font=('Arial', 26), bg = backround)
-    lblPath.configure(text='Path:',font=('Arial', 26), bg = backround)
-    entPath.configure(textvariable=Path,font=('Arial', 26), bg = backround)
+
     btnSubmit.configure(text='Submit',font=('Arial', 30),command=submit)
     #packing
     lbltitle.pack()
     lblLink.pack()
     entLink.pack()
-    lblPath.pack()
-    entPath.pack()
+
     btnSubmit.pack()
 finally:
     menu.mainloop() # end
 
 
 
-#import scraper
+import scraper
