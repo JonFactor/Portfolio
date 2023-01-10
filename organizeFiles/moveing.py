@@ -6,14 +6,23 @@ from datetime import date
 now = date.today()
 ### functions
 def failSafe():
-    shutil.copytree('C:\\Users\jonfa\Documents\GitHub\Portfolio', 'Backups\AUTO-FAILSAFE')
+    if os.path.exists('Backups\AUTO-FAILSAFE'):
+        pass
+    else:
+        shutil.copytree('Backups\MANUAL-FAILSAFE', 'Backups\AUTO-FAILSAFE')
 def RAW():
     if os.path.exists(Path.cwd() / 'RAW'):
-        shutil.rmtree(f'{Path.cwd()} / RAW')
+        shutil.rmtree(f'{Path.cwd()}\RAW')
 
-    everythingdir = Path.cwd() / 'RAW'
-    everythingdir.mkdir()
-    shutil.copytree('')
+    shutil.copytree('Backups\AUTO-FAILSAFE','Raw')
+def Product():
+    if os.path.exists(Path.cwd() / 'PRODUCT'):
+        shutil.rmtree(f'{Path.cwd()}\PRODUCT')
+    
+    productDir = Path.cwd() / 'PRODUCT'
+    productDir.mkdir(exist_ok=True)
+
+    done()
 def done(): 
     if Bools['done']:
         pass
@@ -21,7 +30,7 @@ def done():
 ### localvars
 with open('organizeFiles/localvars.json', 'r') as loc:
     Bools = json.load(loc)
-
 ### function order
-#failSafe()
+failSafe()
 RAW()
+Product()
