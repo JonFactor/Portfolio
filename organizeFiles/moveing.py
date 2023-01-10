@@ -22,10 +22,9 @@ def Product():
     productDir = Path.cwd() / 'PRODUCT'
     productDir.mkdir(exist_ok=True)
 
-    done()
-def done(): 
-    if Bools['done']:
-        pass
+def ifs(): 
+    if Bools['Done']:
+        import projectStatuses
 
 ### localvars
 with open('organizeFiles/localvars.json', 'r') as loc:
@@ -34,3 +33,4 @@ with open('organizeFiles/localvars.json', 'r') as loc:
 failSafe()
 RAW()
 Product()
+ifs()
