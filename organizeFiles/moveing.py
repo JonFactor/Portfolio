@@ -25,6 +25,8 @@ def Product():
 def ifs(): 
     if Bools['Done']:
         import projectStatuses
+    if Bools['Imports']:
+        import byimports
 
 ### localvars
 with open('organizeFiles/localvars.json', 'r') as loc:

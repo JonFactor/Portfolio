@@ -3,7 +3,7 @@ from pathlib import Path
 import os, json
 ### functions
 def inputs():
-    global done
+    global done, imports
     donetf = True
     while donetf:
         done = input('Sort By Working Status(Y/N):')
@@ -15,10 +15,22 @@ def inputs():
             done = False
         else:
             print('Please Input Y or N')
+    importstf = True
+    while importstf:
+        imports = input('Sort By Imports(Y/N):')
+        if imports == 'Y' or imports == 'y':
+            importstf = False
+            imports = True
+        elif imports == 'N' or imports == 'n':
+            importstf = False
+            imports = False
+        else:
+            print('Please Input Y or N')
 def dictt():
     global data
     data = {
-        'Done': done
+        'Done': done,
+        'Imports' : imports
     }
 def local():
     if os.path.exists('organizeFiles\localvars.json'):

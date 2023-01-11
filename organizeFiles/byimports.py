@@ -49,7 +49,10 @@ def refine():
         
         if os.path.exists(Dir):
             if isempty == 0:
-                os.rmdir(Dir)
+                try:
+                    os.rmdir(Dir)
+                except Exception:
+                    pass
 ###functionOrder
 working()
 refine()
