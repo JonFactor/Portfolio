@@ -6,8 +6,8 @@ from selenium.common.exceptions import NoSuchElementException
 from pathlib import Path 
 import json, string, re, os, time
 ############### Defining ###############
-PATH = "C:\Program Files (x86)\chromedriver.exe"# Home
-#PATH = 'C:\\Users\Factor_Jon\Desktop\chromedriver.exe' #Skool
+#PATH = "C:\Program Files (x86)\chromedriver.exe"# Home
+PATH = 'C:\\Users\Factor_Jon\Desktop\chromedriver.exe' #Skool
 driver = webdriver.Chrome(PATH)
 ### get
 Assingment = 'he'
