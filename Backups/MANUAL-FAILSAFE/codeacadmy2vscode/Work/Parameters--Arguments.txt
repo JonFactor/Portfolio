@@ -1,0 +1,6 @@
+[]
+[]
+[['# Your code below:', 'print(', "'gay'", ')', 'listdir', ' = []']]
+[['# Your code below:', 'print(', "'gay'", ')', 'listdir', ' = []']]
+[['# Your code below:', 'print(', "'gay'", ')', 'listdir', ' = []']]
+[['# Your code below:', 'print(', "'gay'", ')', 'listdir', ' = []']]

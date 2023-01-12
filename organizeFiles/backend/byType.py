@@ -1,6 +1,6 @@
 ### imports
 from pathlib import Path
-import os, shutil
+import os, shutil, time
 ### vars
 pydictionary = {}
 pydir = []
@@ -13,7 +13,10 @@ def settup():
     global PyDir, NotPyDir, TypeDir
    
     TypeDir = defaultDir / 'BY-TYPE'
-    shutil.rmtree(TypeDir)
+    if os.path.exists(TypeDir):
+        shutil.rmtree(TypeDir)
+    else:
+        pass
     TypeDir.mkdir(parents=True, exist_ok=True)
     PyDir = TypeDir / extention
     PyDir.mkdir(parents=True, exist_ok=True)
@@ -33,6 +36,7 @@ def workplz():
             ex = extention
         else:
             ex = f'NOT-{extention}'
+
         both = Path.cwd() / 'PRODUCT' / 'BY-TYPE' / ex / dir  
         if not os.path.exists(both) :
             shutil.copytree(rawDir, both)

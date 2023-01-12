@@ -13,11 +13,15 @@ def failSafe():
 def RAW():
     if os.path.exists(Path.cwd() / 'RAW'):
         shutil.rmtree(f'{Path.cwd()}\RAW')
+    else:
+        pass
 
     shutil.copytree('Backups\AUTO-FAILSAFE','Raw')
 def Product():
     if os.path.exists(Path.cwd() / 'PRODUCT'):
         shutil.rmtree(f'{Path.cwd()}\PRODUCT')
+    else:
+        pass
     
     productDir = Path.cwd() / 'PRODUCT'
     productDir.mkdir(exist_ok=True)
@@ -25,8 +29,16 @@ def Product():
 def ifs(): 
     if Bools['Done']:
         import projectStatuses
+    else:
+        pass
     if Bools['Imports']:
         import byimports
+    else:
+        pass
+    if Bools['Type']:
+        import byType
+    else:
+        pass
 
 ### localvars
 with open('organizeFiles/localvars.json', 'r') as loc:
