@@ -25,7 +25,6 @@ try:
     menu = tk.Tk() # start
     menu.geometry(f"{ww}x{wh}")
     menu.configure(bg = backround)
-    menu.iconbitmap('python\codeacadmy2vscode\change_switch_employee_business_office_icon_192566.ico')
     menu.title('CodeCadamy2VS')
     # defining
     lbltitle = Label()
