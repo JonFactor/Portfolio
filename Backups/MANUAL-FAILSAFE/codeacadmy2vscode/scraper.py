@@ -16,7 +16,13 @@ with open('Backups\MANUAL-FAILSAFE\codeacadmy2vscode\local.json', 'r') as loc:
     link = data['link']
     clientEmail = data['email']
     clientPass = data['pass']
+def pess():
+    with open(f'Backups\MANUAL-FAILSAFE\codeacadmy2vscode\\Work\\{Assingment}.txt', 'w') as out:
 
+        out.writelines(str(texts))
+        out.writelines('\n')
+
+        out.close()
 ############## running #################
 try:
     driver.get(link)
@@ -44,24 +50,16 @@ try:
     defs = []
     lines = codebox.find_elements(By.CLASS_NAME, value='view-line')
     i = 1
+    Assingment = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/main/div[2]/div/div/div[1]/div/div/div/div[2]/div/span').text.replace('&', '').replace(' ','-')
+
     for line in lines:
         span = line.find_element(By.TAG_NAME, value='span')
         spans = span.find_elements(By.TAG_NAME, value='span')
-        w = 0
-        while w < len(spans):
-            #refined = spans[w].text.replace("', '", '').replace(', "', '').replace('", ', '').replace("''", '"')
-
-            texts.append(spans[w].text)
-            deff = {
-                'text':texts,
-                'line':i
-            }    
-            defs.append(deff)       
-            w += 1
+        for spa in spans:
+            textss.append(spa.text)
         i += 1
-        #texts.append(textss)
-    Assingment = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/main/div[2]/div/div/div[1]/div/div/div/div[2]/div/span').text.replace('&', '').replace(' ','-')
-
+        pess()
+    
 finally:
     time.sleep(1)
     driver.quit()
@@ -71,17 +69,4 @@ if not os.path.exists(workdir):
     workdir.mkdir()
 
 
-
-with open(f'Backups\MANUAL-FAILSAFE\codeacadmy2vscode\\Work\\{Assingment}.txt', 'w') as out:
-    w = 0
-    linee = []
-    while w < len(defs):
-        this = defs[w]
-        if this['line'] == w:
-            linee.append(texts)
-        out.writelines(str(linee))
-        out.writelines('\n')
-        w += 1
-
-    out.close()
 print('done')
