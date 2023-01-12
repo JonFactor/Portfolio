@@ -46,23 +46,22 @@ def everything():
     finally:
         pass
 def nesting():
-    try:
-        webwait(path = '/html/body/div[2]/div/div/div[3]/div[1]/main/div/div[1]/div[1]/div/ul/li[1]/div[1]/button')
-        driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[3]/div[1]/main/div/div[1]/div[1]/div/ul/li[1]/div[1]/button').click()
-        time.sleep(1)
-        courcesdiv = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[3]/div[1]/main/div/div[1]/div[1]/div/ul')
-        time.sleep(3)
-        cources = courcesdiv.find_elements(By.TAG_NAME, 'li')
-        for cource in cources:
-            cource.click()
-            time.sleep(1)
-            stuffs = cource.find_elements(By.CLASS_NAME, 'container__YJuK08cLjX0jUBbGmQfHd dashboard__1GwpCIjA_oG0nwPre5P1wS showLine__1G83rE1KM7C0eEu8n0d3t_')
-            for stuff in stuffs:
-                link = stuff.find_element(By.CLASS_NAME, 'link__2iwRnyero2KOH7hPxRxxVN')
-                link.click()
 
-    except Exception:
-        print('1')
+    webwait(path = '/html/body/div[2]/div/div/div[3]/div[1]/main/div/div[1]/div[1]/div/ul/li[1]/div[1]/button')
+    driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[3]/div[1]/main/div/div[1]/div[1]/div/ul/li[1]/div[1]/button').click()
+    time.sleep(1)
+    courcesdiv = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[3]/div[1]/main/div/div[1]/div[1]/div/ul')
+    time.sleep(3)
+    cources = courcesdiv.find_elements(By.TAG_NAME, 'li')
+    for cource in cources:
+        cource.click()
+        time.sleep(1)
+        stuffs = cource.find_elements(By.CLASS_NAME, 'container__YJuK08cLjX0jUBbGmQfHd dashboard__1GwpCIjA_oG0nwPre5P1wS showLine__1G83rE1KM7C0eEu8n0d3t_')
+        for stuff in stuffs:
+            link = stuff.find_element(By.CLASS_NAME, 'link__2iwRnyero2KOH7hPxRxxVN')
+            print(link)
+            link.click()
+
 ############## running ################# Lesson 
 try:
     driver.get('https://www.codecademy.com/login?redirect=https%3A%2F%2Fwww.codecademy.com%2F')
